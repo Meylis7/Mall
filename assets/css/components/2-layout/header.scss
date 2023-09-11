@@ -1,0 +1,184 @@
+// Header =====================
+.header {
+    padding: 24px 0;
+
+    &_box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &_group {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 1.3;
+        color: $main-color;
+
+        span {
+            display: block;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.3;
+            color: $txt-color;
+        }
+    }
+
+    .search_btn {
+        display: flex;
+        align-items: center;
+        margin: 0 50px;
+        cursor: pointer;
+
+        h6 {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 1.4;
+            color: $main-color;
+            margin-right: 10px;
+            @include transition;
+        }
+
+        span {
+            display: block;
+            width: 18px;
+            height: 18px;
+
+            svg {
+                @include ImgCon;
+                display: block;
+
+                path {
+                    @include transition;
+                }
+            }
+        }
+    }
+
+    .burger {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        h6 {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 1.4;
+            color: $main-color;
+            margin-right: 10px;
+            @include transition;
+        }
+
+        span {
+            position: relative;
+            display: block;
+            width: 18px;
+            height: 3px;
+            background: $main-color;
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 5px;
+                width: 10px;
+                height: 3px;
+                background: $main-color;
+            }
+        }
+    }
+}
+
+.lang {
+    position: relative;
+    z-index: 10;
+
+    &_current {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        position: relative;
+
+        &:hover {
+            h6 {
+                color: $main-color;
+            }
+
+            path {
+                fill: $main-color;
+            }
+        }
+
+        h6 {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 1.4;
+            color: $main-color;
+            margin-right: 10px;
+            @include transition;
+        }
+
+        span {
+            display: block;
+            width: 14px;
+            height: 8px;
+
+            svg {
+                @include ImgCon;
+                display: block;
+
+                path {
+                    @include transition;
+                }
+            }
+        }
+    }
+
+    &_box {
+        // display: none;
+        position: absolute;
+        top: calc(100% + 30px);
+        left: 50%;
+        @include transformX;
+        @include transition;
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 8px;
+        overflow: hidden;
+
+        opacity: 0;
+        pointer-events: none;
+        z-index: -1;
+
+        &.active {
+            top: calc(100% + 15px);
+            opacity: 1;
+            pointer-events: unset;
+            z-index: 5;
+        }
+
+        a {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 1.4;
+            color: $main-color;
+            text-align: center;
+            z-index: 5;
+            @include transition;
+            display: block;
+            width: 80px;
+            padding: 8px 0;
+
+            &:hover {
+                background: $main-color;
+                color: $main-color;
+            }
+        }
+    }
+}
+
+
+// Header end =================
