@@ -1,10 +1,15 @@
 
 // var ==========================
-let lang_drop = document.querySelector(".lang_drop");
+let body = document.querySelector("body");
+
+let lang_box = document.querySelector(".lang_box");
 let lang_current = document.querySelector(".lang_current");
 
 let burger = document.querySelector(".burger");
-let nav_bg = document.querySelector(".nav_bg");
+let menu = document.querySelector(".menu");
+
+let search_btn = document.querySelector(".search_btn");
+let modal_search  = document.querySelector(".modal_search ");
 
 
 function sleep(time) {
@@ -17,8 +22,10 @@ window.onscroll = function () {
 
     if (scrollPosition > 100) {
         document.querySelector('.header').classList.add('stick');
+        // document.querySelector('.menu').classList.add('stick');
     } else {
         document.querySelector('.header').classList.remove('stick');
+        // document.querySelector('.menu').classList.remove('stick');
     }
 };
 
@@ -32,21 +39,22 @@ window.onclick = function (e) {
     // }
     // );
 
-    // if (drop_lang.classList.contains('active') && !e.target.closest('.lang_box')) {
-    //     drop_lang.classList.remove('active')
-    // }
+    if (modal_search.classList.contains('active') && !e.target.closest('.modal_inner')) {
+        modal_search.classList.remove('active')
+        body.classList.remove('active')
+    }
 
-    // if (nav_bg.classList.contains('active') && !e.target.closest('.burger') && !e.target.closest('.lang_current') && !e.target.closest('.service_nav-link')) {
-    //     nav_bg.classList.remove('active')
-    // }
+    if (menu.classList.contains('active') && !e.target.closest('.burger') && !e.target.closest('.lang_current') && !e.target.closest('.service_nav-link')) {
+        menu.classList.remove('active')
+    }
 
-    // if (burger.classList.contains('active') && !e.target.closest('.burger') && !e.target.closest('.lang_current') && !e.target.closest('.service_nav-link')) {
-    //     burger.classList.remove('active')
-    // }
+    if (burger.classList.contains('active') && !e.target.closest('.burger') && !e.target.closest('.lang_current') && !e.target.closest('.service_nav-link')) {
+        burger.classList.remove('active')
+    }
 
-    // if (lang_drop.classList.contains('active') && !e.target.closest('.lang_current')) {
-    //     lang_drop.classList.remove('active')
-    // }
+    if (lang_box.classList.contains('active') && !e.target.closest('.lang_current')) {
+        lang_box.classList.remove('active')
+    }
 }
 
 
@@ -55,7 +63,7 @@ window.onclick = function (e) {
 if (lang_current != undefined) {
     lang_current.addEventListener('click', function () {
         sleep(2).then(() => {
-            lang_drop.classList.toggle('active');
+            lang_box.classList.toggle('active');
         });
     });
 }
@@ -64,66 +72,45 @@ if (lang_current != undefined) {
 if (burger != undefined) {
     burger.addEventListener('click', function () {
         sleep(2).then(() => {
-            nav_bg.classList.toggle('active');
+            menu.classList.toggle('active');
             burger.classList.toggle('active');
+        });
+    });
+}
+
+if (search_btn != undefined) {
+    search_btn.addEventListener('click', function () {
+        sleep(2).then(() => {
+            modal_search.classList.toggle('active');
+            body.classList.add('active');
         });
     });
 }
 
 
 // Accord ===============================================
-// var accordion = document.getElementsByClassName("accord");
-// var z;
+var accordion = document.getElementsByClassName("accord");
+var z;
 
-// function accord() {
-//     for (z = 0; z < accordion.length; z++) {
-//         accordion[z].addEventListener("click", function () {
-//             this.classList.toggle("active");
-//             var panel = this.nextElementSibling;
+function accord() {
+    for (z = 0; z < accordion.length; z++) {
+        accordion[z].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
 
-//             if (panel.style.maxHeight) {
-//                 panel.style.maxHeight = null;
-//                 panel.style.overflow = "auto";
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+                panel.style.overflow = "auto";
 
-//             } else {
-//                 panel.style.maxHeight = panel.scrollHeight + "px";
-//                 panel.style.overflow = "visible";
-//             }
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+                panel.style.overflow = "visible";
+            }
 
-//             initializeCustomSelect();
-//         });
-//     }
-// }
-
-// accord();
-// Accord end =========================
-
-function initAccordion(accordionElem) {
-
-    //when panel is clicked, handlePanelClick is called.           
-    function handlePanelClick(event) {
-        showPanel(event.currentTarget);
+            initializeCustomSelect();
+        });
     }
-    //Hide currentPanel and show new panel.  
-
-    function showPanel(panel) {
-        //Hide current one. First time it will be null. 
-        var expandedPanel = accordionElem.querySelector(".active");
-        if (expandedPanel) {
-            expandedPanel.classList.remove("active");
-        }
-        //Show new one
-        panel.classList.add("active");
-
-    }
-    var allPanelElems = accordionElem.querySelectorAll(".panel");
-    for (var i = 0, len = allPanelElems.length; i < len; i++) {
-        allPanelElems[i].addEventListener("click", handlePanelClick);
-    }
-    //By Default Show first panel
-    showPanel(allPanelElems[-1])
 }
-initAccordion(document.getElementById("accordion"));
 
-var accordionHeader = document.g
-
+accord();
+// Accord end =========================

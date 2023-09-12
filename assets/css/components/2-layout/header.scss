@@ -1,6 +1,29 @@
 // Header =====================
 .header {
     padding: 24px 0;
+    transition: all .3s linear;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    position: relative;
+    background: #fff;
+    @include transition;
+
+    &.stick {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        z-index: 30;
+        padding: 20px 0;
+
+        .logo {
+            font-size: 26px;
+
+            span {
+                font-size: 14px;
+            }
+        }
+    }
 
     &_box {
         display: flex;
@@ -18,6 +41,7 @@
         font-weight: 700;
         line-height: 1.3;
         color: $main-color;
+        // @include transition;
 
         span {
             display: block;
@@ -25,6 +49,7 @@
             font-weight: 700;
             line-height: 1.3;
             color: $txt-color;
+            // @include transition;
         }
     }
 
@@ -148,6 +173,7 @@
         box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
         border-radius: 8px;
         overflow: hidden;
+        background: #fff;
 
         opacity: 0;
         pointer-events: none;
@@ -173,12 +199,75 @@
             padding: 8px 0;
 
             &:hover {
-                background: $main-color;
-                color: $main-color;
+                background: #767676;
+                color: #fff;
             }
         }
     }
 }
 
+.menu {
+    width: 100%;
+    background: #fff;
+    z-index: 5;
+
+    max-height: 0;
+    overflow: hidden;
+    @include transition;
+    opacity: 0;
+
+    // &.stick {
+    //     position: fixed;
+    //     top: 92px;
+    //     left: 0;
+    //     max-height: 500px;
+    // }
+
+    &.active {
+        overflow: visible;
+        opacity: 1;
+        max-height: 500px;
+    }
+
+    &_inner {
+        padding: 40px 0 20px;
+        @include transition;
+    }
+
+    &_box {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &_link {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        span {
+            width: 28px;
+            height: 28px;
+            display: block;
+            margin-right: 10px;
+
+            img,
+            svg {
+                @include ImgCon;
+                display: block;
+            }
+        }
+
+        p {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.3;
+            color: #4d4d4d;
+        }
+    }
+}
 
 // Header end =================

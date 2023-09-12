@@ -158,15 +158,72 @@
 
     &_search {
         .modal_inner {
-            height: calc(100vh - 50px);
+            height: calc(100vh - 80px);
             margin: auto 0;
         }
 
         .search {
+            &_input {
+                width: 100%;
+                position: relative;
+                display: block;
+                margin-bottom: 30px;
+
+                input {
+                    width: calc(100% - 40px);
+                    padding: 20px;
+                    font-size: 18px;
+                    font-weight: 500;
+                    line-height: 1.3;
+                    color: $main-color;
+                    border-radius: 10px;
+
+                    &::placeholder {
+                        color: #767676;
+                    }
+                }
+
+                button {
+                    cursor: pointer;
+                    position: absolute;
+                    top: 50%;
+                    @include transformY;
+                    right: 20px;
+                    width: 26px;
+                    height: 26px;
+                    background: transparent;
+
+                    svg,
+                    img {
+                        @include ImgCon;
+                        display: block;
+                    }
+                }
+            }
+
+            &_txt {
+                font-size: 18px;
+                font-weight: 500;
+                line-height: 1.3;
+                color: #FFF;
+                text-align: center;
+            }
+
             &_result {
                 border-radius: 10px;
                 background: #FFF;
-                padding: 20px;
+                padding: 20px 0 20px 20px;
+
+                &>div {
+                    overflow: auto;
+                    max-height: calc(100vh - 200px);
+                    @include transition;
+                    padding-right: 20px;
+
+                    &::-webkit-scrollbar-thumb {
+                        background: #4D4D4D;
+                    }
+                }
             }
 
             &_item {
@@ -243,6 +300,38 @@
                             display: block;
                         }
                     }
+                }
+            }
+        }
+    }
+
+    &_news {
+        .modal {
+            &_inner {
+                background: #fff;
+                padding: 60px 20px 20px;
+                position: relative;
+                max-width: 1200px;
+            }
+
+            &_close {
+                background: #A6A6A6;
+                top: 20px;
+                right: 20px;
+                
+                width: 30px;
+                height: 30px;
+                border-radius: 10px;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                svg,
+                img {
+                    width: 50%;
+                    height: 50%;
+                    display: block;
                 }
             }
         }

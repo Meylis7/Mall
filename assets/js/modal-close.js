@@ -1,5 +1,7 @@
 const modBtn = document.querySelectorAll(".modBtn");
 const mod = document.querySelectorAll(".mod");
+// const body = document.querySelector("body");
+
 
 modBtn.forEach((e) => {
   onModClick(modBtn, mod, e);
@@ -9,6 +11,7 @@ const modClose = document.querySelectorAll(".modClose").forEach((e) => {
   e.addEventListener("click", function (x) {
     var modId = x.target.dataset.mod;
     document.querySelector("#" + modId).classList.remove("active");
+    body.classList.remove('active')
   });
 });
 
@@ -25,6 +28,7 @@ function onModClick(modBtns, mods, modItem) {
         modItem.classList.remove("active");
       });
       currentMod.classList.add("active");
+      body.classList.add('active')
     }
   });
 }
