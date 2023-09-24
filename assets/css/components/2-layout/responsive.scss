@@ -1,8 +1,148 @@
 // 1400 ========================
 @include xlg-xxxlg {}
 
-// 1200 ========================
-@include xlg-xxlg {}
+// 1300 ========================
+@include xlg-xxlg {
+
+    // Header ===============
+    .header {
+        .logo {
+            font-size: 26px;
+
+            span {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .main {
+        &_title {
+            font-size: 32px;
+        }
+    }
+
+    // Hero =================
+    .hero {
+        &_title {
+            font-size: 34px;
+        }
+    }
+
+    // Category =============
+    .category {
+        padding-bottom: 60px;
+
+        &_link {
+            h6 {
+                font-size: 16px;
+            }
+        }
+    }
+
+    // News =================
+    .news {
+        &_slider {
+            &-photo {
+                height: 260px;
+            }
+
+            &-type,
+            &-date {
+                font-size: 14px;
+            }
+
+            &-title {
+                font-size: 20px;
+            }
+
+            &-link {
+                font-size: 16px;
+
+                span {
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+        }
+    }
+
+    // Service =============
+    .service {
+        padding: 60px 0;
+
+        &_item {
+            padding: 25px;
+            width: calc(33.330% - 90px);
+
+            span {
+                height: 70px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+        }
+    }
+
+    // About ========================
+    .about {
+        padding-bottom: 60px;
+
+        &_item {
+            &-info {
+                width: 360px;
+            }
+
+            &-title {
+                font-size: 32px;
+            }
+
+            &-photo {
+                width: calc(100% - 400px);
+            }
+        }
+
+        &_title {
+            font-size: 44px;
+        }
+
+        .swiper-button-prev,
+        .about .swiper-button-next {
+            width: 36px;
+            height: 50px;
+        }
+    }
+
+    // Shops =====================
+    .shops {
+        &_aside {
+            width: 320px;
+        }
+
+        &_block {
+            width: calc(100% - 325px);
+
+            &-title {
+                font-size: 20px;
+
+                span {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+
+        &_item {
+            margin: 7px;
+            width: calc(50% - 14px);
+
+            &-title {
+                font-size: 18px;
+            }
+        }
+    }
+
+}
 
 // 1100 =======================
 @include lg-xxlg {
@@ -11,20 +151,539 @@
         padding: 0 35px;
     }
 
+    // Category ===================
+    .category {
+        &_box {
+            overflow: auto;
+            flex-wrap: unset;
+            flex-direction: row;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        &_link {
+            min-width: 250px;
+        }
+    }
+
 }
 
-// 1000 ======================
-@include lg-xlg {}
+// 1024 ======================
+@include lg-xlg {
 
-// 750 ========================
-@include lg-lg {}
+    // Hero ====================
+    .hero {
+        &_title {
+            font-size: 24px;
+        }
+    }
+
+    .main_title {
+        font-size: 28px;
+    }
+
+    // Service =================
+    .service {
+        &_box {
+            overflow: auto;
+            width: 100%;
+            margin: 0;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        &_item {
+            min-width: 280px;
+            margin: 0 15px 0 0;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    // About ===================
+    .about {
+        &.mobile-pt {
+            padding-top: 0;
+
+
+            .auto_container {
+                padding: 0;
+            }
+        }
+
+        &_item {
+            flex-direction: column-reverse;
+
+            &-info {
+                width: calc(100% - 30px);
+                text-align: center;
+
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                margin-top: 30px;
+            }
+
+            &-link {
+                margin-top: 30px;
+            }
+
+            &-photo {
+                width: 100%;
+
+                img {
+                    border-radius: unset;
+                }
+            }
+        }
+
+        &_inner {
+            border-radius: unset;
+            box-shadow: unset;
+            background: unset;
+            padding: 0;
+        }
+
+        &_block {
+            &-info {
+                padding: 0 35px;
+            }
+        }
+
+        &_title {
+            margin-bottom: 20px;
+            width: 100%;
+
+            br {
+                display: none;
+            }
+        }
+
+        &_txt {
+            width: 100%;
+            margin-bottom: 20px;
+
+            &.center {
+                margin: 0 0 20px;
+            }
+
+            &.right {
+                margin: 0;
+            }
+        }
+
+        &_group {
+            flex-direction: column;
+
+            &-slider {
+                width: 100%;
+            }
+
+            &-info {
+                width: calc(100% - 70px);
+                padding: 0 35px;
+                margin-top: 20px;
+            }
+        }
+
+        .swiper {
+            &-slide {
+                height: 450px;
+            }
+        }
+
+    }
+
+    // Banner ====================
+    .banner {
+        .auto_container {
+            padding: 0;
+        }
+
+        &-slider {
+
+            &-next,
+            &-prev {
+                display: none;
+            }
+        }
+
+        &_pag {
+            display: block;
+            position: initial;
+            margin-top: 15px;
+        }
+    }
+
+    // Footer ===================
+    .footer {
+        &_box {
+            flex-direction: column-reverse;
+        }
+
+        &_col {
+            max-width: 100%;
+            width: 100%;
+            text-align: center;
+            position: relative;
+
+            // display: flex;
+            // flex-wrap: wrap;
+            // justify-content: space-between;
+
+            &:first-child {
+                margin-top: 80px;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: -30px;
+                    left: 0;
+                    width: 100%;
+                    height: 1px;
+                    background: #ADADAD;
+                }
+            }
+
+            // &-txt {
+            //     width: 100%;
+            // }
+
+            // &-link {
+            //     width: calc(33.33% - 20px);
+            // }
+        }
+    }
+
+    // Contact =================
+    .contact {
+        &_form {
+            border-radius: unset;
+            background-color: transparent;
+            box-shadow: unset;
+            flex-direction: column-reverse;
+        }
+
+        &_info {
+            background: transparent;
+            padding: 0;
+        }
+
+        &_field {
+            padding: 10px;
+            background: #fff;
+            width: 100%;
+            margin-top: 40px;
+        }
+    }
+
+}
+
+// 800 ========================
+@include lg-lg {
+
+    // Header ===============
+    .header {
+        .search {
+            &_btn {
+                margin: 0 30px 0 0;
+
+                h6 {
+                    display: none;
+                }
+
+                span {
+                    width: 26px;
+                    height: 26px;
+                }
+            }
+        }
+
+        .burger {
+            margin-bottom: 10px;
+
+            h6 {
+                display: none;
+            }
+
+            span {
+                width: 26px;
+                height: 4px;
+
+                &::after {
+                    top: 10px;
+                    height: 4px;
+                    width: 15px;
+                }
+            }
+        }
+    }
+
+    .lang {
+        display: none;
+    }
+
+    .mobile {
+        &_lang {
+            position: relative;
+            display: flex;
+            justify-content: center;
+
+            &-box {
+                display: flex;
+                border: 1px solid #D6D6D6;
+                border-radius: 5px;
+            }
+
+            a {
+                display: block;
+                padding: 10px;
+                text-align: center;
+                border-right: 1px solid #D6D6D6;
+
+                &:last-child {
+                    border-right: none;
+                }
+            }
+        }
+    }
+
+    .menu {
+        position: fixed;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        max-height: 100%;
+        background: rgba(0, 0, 0, .5);
+        backdrop-filter: blur(3px);
+        z-index: 50;
+
+        opacity: 0;
+        pointer-events: none;
+
+        &.active {
+            opacity: 1;
+            pointer-events: unset;
+            max-height: 100%;
+
+            .menu_inner {
+                background: #fff;
+            }
+        }
+
+        .auto_container {
+            padding: 0;
+        }
+
+        &_inner {
+            width: calc(100% - 100px);
+            overflow: auto;
+            margin: 0 0 0 auto;
+
+            padding: 40px 0 20px 30px;
+        }
+
+        &_box {
+            flex-direction: column;
+        }
+
+        &_col {
+            position: relative;
+
+            &:last-child {
+                padding: 20px;
+                margin: 20px 0;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 1px;
+                    background: #D6D6D6;
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 1px;
+                    background: #D6D6D6;
+                }
+            }
+        }
+    }
+
+    // Contact ==============
+    .contact {
+        &_input {
+            width: 100%;
+            margin: 10px 0;
+
+            &.textarea {
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+
+        &_btn {
+            width: 100%;
+            margin: 10px 0;
+        }
+    }
+
+}
 
 // 650 =======================
 @include md-sm {}
 
-// 400 ===========================
+// 440 ===========================
 @include md-xsm {
     .auto_container {
         padding: 0 20px;
     }
+
+    .header {
+        .logo {
+            font-size: 20px;
+
+            span {
+                font-size: 12px;
+            }
+        }
+
+        &.stick {
+            .logo {
+                font-size: 20px;
+
+                span {
+                    font-size: 12px;
+                }
+            }
+        }
+
+        .search {
+            &_btn {
+                width: 22px;
+                height: 22px;
+                margin-right: 24px;
+            }
+        }
+    }
+
+    // Hero ===================
+    .hero {
+        &_title {
+            font-size: 16px;
+        }
+    }
+
+    // Category ================
+    .category {
+        padding: 50px 0 30px;
+    }
+
+    // News ====================
+    .news {
+        &_slider {
+            &-photo {
+                height: 200px;
+            }
+
+            &-type,
+            &-date {
+                font-size: 12px;
+            }
+
+            &-title,
+            &-link {
+                font-size: 14px;
+            }
+        }
+    }
+
+    // Service ======================
+    .service {
+        &_item {
+            min-width: 200px;
+            padding: 20px 15px;
+        }
+    }
+
+    // About =======================
+    .about {
+        padding: 60px 0 40px;
+
+        &_item {
+            &-title {
+                font-size: 22px;
+            }
+
+            &-txt {
+                font-size: 14px;
+            }
+
+            &-link {
+                font-size: 16px;
+            }
+        }
+
+        &_block {
+            &-info {
+                padding: 0 20px;
+            }
+        }
+
+        &_title {
+            br {
+                display: block;
+            }
+        }
+
+        .swiper {
+            &-slide {
+                height: 100%;
+            }
+        }
+
+        &_group {
+            &-info {
+                padding: 0 20px;
+                width: calc(100% - 40px);
+            }
+
+            &-title {
+                font-size: 20px;
+            }
+        }
+    }
+
+    // Footer ================
+    .footer {
+        &_col {
+            &-link {
+                font-size: 14px;
+
+                span {
+                    width: 22px;
+                    height: 22px;
+                }
+            }
+
+            &-txt {
+                font-size: 14px;
+            }
+        }
+    }
+
 }

@@ -39,10 +39,13 @@ window.onclick = function (e) {
     // }
     // );
 
-    if (modal_search.classList.contains('active') && !e.target.closest('.modal_inner')) {
-        modal_search.classList.remove('active')
-        body.classList.remove('active')
+    if (modal_search != undefined) {
+        if (modal_search.classList.contains('active') && !e.target.closest('.modal_inner')) {
+            modal_search.classList.remove('active')
+            body.classList.remove('active')
+        }
     }
+    
 
     if (menu.classList.contains('active') && !e.target.closest('.burger') && !e.target.closest('.lang_current') && !e.target.closest('.service_nav-link')) {
         menu.classList.remove('active')
