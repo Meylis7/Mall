@@ -184,6 +184,14 @@
         font-size: 28px;
     }
 
+    .mobile {
+        &_filter {
+            &-btn {
+                display: block;
+            }
+        }
+    }
+
     // Service =================
     .service {
         &_box {
@@ -383,6 +391,58 @@
         }
     }
 
+    // Shops =====================
+    .shops {
+        &_box {
+            flex-direction: column;
+        }
+
+        &_aside {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, .5);
+            backdrop-filter: blur(3px);
+            padding: 40px;
+            width: calc(100% - 80px);
+            height: calc(100% - 80px);
+            z-index: -1;
+            border-radius: 0;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow: auto;
+
+            opacity: 0;
+            pointer-events: none;
+
+            &.active {
+                opacity: 1;
+                pointer-events: unset;
+                z-index: 51;
+            }
+
+            ::-webkit-scrollbar {
+                display: none;
+            }
+
+            &-info {
+                .inner {
+                    background: #F5F5F5;
+                }
+            }
+        }
+
+        &_block {
+            width: 100%;
+        }
+
+        &_item {
+            width: calc(33.33% - 14px);
+        }
+    }
+
 }
 
 // 800 ========================
@@ -524,6 +584,30 @@
         }
     }
 
+    // Footer ==============
+    .footer {
+        padding: 45px 0;
+
+        &_col {
+            &:first-child {
+                margin-top: 70px;
+            }
+        }
+    }
+
+    // About ===============
+    .about {
+        &_title {
+            font-size: 36px;
+        }
+
+        &_group {
+            &-title {
+                font-size: 26px;
+            }
+        }
+    }
+
     // Contact ==============
     .contact {
         &_input {
@@ -542,15 +626,62 @@
         }
     }
 
+    // Shops =====================
+    .shops {
+        &_item {
+            width: calc(50% - 14px);
+        }
+    }
+
 }
 
 // 650 =======================
-@include md-sm {}
+@include md-sm {
+    .auto_container {
+        padding: 0 20px;
+    }
+
+    // Shops =====================
+    .shops {
+        &_block {
+            margin: 0;
+        }
+
+        &_item {
+            width: calc(100% - 20px);
+            margin: 0 0 15px;
+            padding: 10px;
+            background: #fff;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            &-photo {
+                width: 100px;
+                height: unset;
+            }
+
+            &-info {
+                width: calc(100% - 110px);
+                padding: 0;
+            }
+
+            &-row {
+                display: none;
+            }
+
+            &-txt {
+                font-size: 12px;
+            }
+        }
+    }
+}
 
 // 440 ===========================
 @include md-xsm {
     .auto_container {
-        padding: 0 20px;
+        padding: 0 15px;
     }
 
     .header {

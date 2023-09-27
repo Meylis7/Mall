@@ -282,7 +282,8 @@
 }
 
 .mobile {
-    &_lang {
+    &_lang,
+    &_filter-btn {
         display: none;
     }
 }
