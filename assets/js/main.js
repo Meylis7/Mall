@@ -27,6 +27,9 @@ window.onscroll = function () {
         document.querySelector('.header').classList.remove('stick');
         // document.querySelector('.menu').classList.remove('stick');
     }
+
+    document.querySelector('.menu').classList.remove('active');
+
 };
 
 window.onclick = function (e) {
