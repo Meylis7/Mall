@@ -12,20 +12,54 @@
     &_aside {
         width: 340px;
         position: sticky;
-        top: 40px;
+        top: 100px;
 
         border-radius: 10px;
         background: #F5F5F5;
         overflow: hidden;
         box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.25);
+        @include transition;
+
+        &-wrap {
+            @include transition;
+        }
 
         &-item {
             display: block;
             position: relative;
             border-bottom: 1px solid #EBEBEB;
+            // @include transition;
 
             &:last-child {
                 margin-bottom: 0;
+            }
+
+            &.open {
+                .shops_aside-info {
+                    // transform-origin: bottom;
+                    overflow: auto;
+                    max-height: 500px;
+                }
+
+                .shops_aside-title {
+                    &::after {
+                        transform: rotate(180deg) translateY(50%);
+                    }
+                }
+            }
+
+            &.close {
+                .shops_aside-info {
+                    max-height: 0px;
+                    // transition: .2s ease-out;
+                    display: block;
+                }
+
+                .shops_aside-title {
+                    &::after {
+                        @include transformY;
+                    }
+                }
             }
         }
 
@@ -82,10 +116,6 @@
             overflow: hidden;
             @include transition;
 
-            .inner {
-                padding: 20px 20px 20px 50px;
-            }
-
             &::before {
                 content: '';
                 position: absolute;
@@ -94,6 +124,258 @@
                 width: 1px;
                 height: 100%;
                 background: #000;
+            }
+
+            .inner {
+                padding: 20px 20px 20px 50px;
+            }
+
+            &.bg-1 {
+                &::before {
+                    background: #D20F0F;
+                }
+
+                .shops_aside-check {
+                    input {
+                        &:checked~.shops_aside-label {
+                            color: #D20F0F;
+                        }
+                    }
+                }
+
+                .shops_aside-label {
+                    &::after {
+                        color: #D20F0F;
+                    }
+                }
+            }
+            &.bg-2 {
+                &::before {
+                    background: #E5C4A3;
+                }
+
+                .shops_aside-check {
+                    input {
+                        &:checked~.shops_aside-label {
+                            color: #E5C4A3;
+                        }
+                    }
+                }
+
+                .shops_aside-label {
+                    &::after {
+                        color: #E5C4A3;
+                    }
+                }
+            }
+            &.bg-3 {
+                &::before {
+                    background: #0FA3D2;
+                }
+
+                .shops_aside-check {
+                    input {
+                        &:checked~.shops_aside-label {
+                            color: #0FA3D2;
+                        }
+                    }
+                }
+
+                .shops_aside-label {
+                    &::after {
+                        color: #0FA3D2;
+                    }
+                }
+            }
+            &.bg-4 {
+                &::before {
+                    background: #B2D20F;
+                }
+
+                .shops_aside-check {
+                    input {
+                        &:checked~.shops_aside-label {
+                            color: #B2D20F;
+                        }
+                    }
+                }
+
+                .shops_aside-label {
+                    &::after {
+                        color: #B2D20F;
+                    }
+                }
+            }
+            &.bg-5 {
+                &::before {
+                    background: #0FD28C;
+                }
+
+                .shops_aside-check {
+                    input {
+                        &:checked~.shops_aside-label {
+                            color: #0FD28C;
+                        }
+                    }
+                }
+
+                .shops_aside-label {
+                    &::after {
+                        color: #0FD28C;
+                    }
+                }
+            }
+            &.bg-6 {
+                &::before {
+                    background: #D2A20F;
+                }
+
+                .shops_aside-check {
+                    input {
+                        &:checked~.shops_aside-label {
+                            color: #D2A20F;
+                        }
+                    }
+                }
+
+                .shops_aside-label {
+                    &::after {
+                        color: #D2A20F;
+                    }
+                }
+            }
+            &.bg-7 {
+                &::before {
+                    background: #ABD20F;
+                }
+
+                .shops_aside-check {
+                    input {
+                        &:checked~.shops_aside-label {
+                            color: #ABD20F;
+                        }
+                    }
+                }
+
+                .shops_aside-label {
+                    &::after {
+                        color: #ABD20F;
+                    }
+                }
+            }
+            &.bg-8 {
+                &::before {
+                    background: #2A0FD2;
+                }
+
+                .shops_aside-check {
+                    input {
+                        &:checked~.shops_aside-label {
+                            color: #2A0FD2;
+                        }
+                    }
+                }
+
+                .shops_aside-label {
+                    &::after {
+                        color: #2A0FD2;
+                    }
+                }
+            }
+            &.bg-9 {
+                &::before {
+                    background: #ABD20F;
+                }
+
+                .shops_aside-check {
+                    input {
+                        &:checked~.shops_aside-label {
+                            color: #ABD20F;
+                        }
+                    }
+                }
+
+                .shops_aside-label {
+                    &::after {
+                        color: #ABD20F;
+                    }
+                }
+            }
+            &.bg-10 {
+                &::before {
+                    background: #710FD2;
+                }
+
+                .shops_aside-check {
+                    input {
+                        &:checked~.shops_aside-label {
+                            color: #710FD2;
+                        }
+                    }
+                }
+
+                .shops_aside-label {
+                    &::after {
+                        color: #710FD2;
+                    }
+                }
+            }
+            &.bg-11 {
+                &::before {
+                    background: #D20FB3;
+                }
+
+                .shops_aside-check {
+                    input {
+                        &:checked~.shops_aside-label {
+                            color: #D20FB3;
+                        }
+                    }
+                }
+
+                .shops_aside-label {
+                    &::after {
+                        color: #D20FB3;
+                    }
+                }
+            }
+            &.bg-12 {
+                &::before {
+                    background: #50D20F;
+                }
+
+                .shops_aside-check {
+                    input {
+                        &:checked~.shops_aside-label {
+                            color: #50D20F;
+                        }
+                    }
+                }
+
+                .shops_aside-label {
+                    &::after {
+                        color: #50D20F;
+                    }
+                }
+            }
+            &.bg-13 {
+                &::before {
+                    background: #D24A0F;
+                }
+
+                .shops_aside-check {
+                    input {
+                        &:checked~.shops_aside-label {
+                            color: #D24A0F;
+                        }
+                    }
+                }
+
+                .shops_aside-label {
+                    &::after {
+                        color: #D24A0F;
+                    }
+                }
             }
         }
 
@@ -125,15 +407,11 @@
             line-height: 1.3;
 
             &::after {
-                content: '';
-                // position: absolute;
-                // top: 50%;
-                // right: 0px;
-                // @include transformY;
+                content: '✖';
                 display: block;
-                width: 14px;
-                height: 14px;
-                background: url("../images/svg/close.svg") center no-repeat;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 1.3;
                 opacity: 0;
                 @include transition;
             }
@@ -151,7 +429,7 @@
             align-items: center;
             margin-bottom: 50px;
             width: 100%;
-            margin: 0 15px 25px; 
+            margin: 0 15px 25px;
 
             font-size: 26px;
             font-weight: 600;

@@ -1,4 +1,3 @@
-
 // var ==========================
 let body = document.querySelector("body");
 
@@ -9,7 +8,7 @@ let burger = document.querySelector(".burger");
 let menu = document.querySelector(".menu");
 
 let search_btn = document.querySelector(".search_btn");
-let modal_search  = document.querySelector(".modal_search ");
+let modal_search = document.querySelector(".modal_search ");
 
 
 function sleep(time) {
@@ -48,7 +47,7 @@ window.onclick = function (e) {
             body.classList.remove('active')
         }
     }
-    
+
 
     if (menu.classList.contains('active') && !e.target.closest('.burger') && !e.target.closest('.lang_current') && !e.target.closest('.service_nav-link')) {
         menu.classList.remove('active')
@@ -95,28 +94,47 @@ if (search_btn != undefined) {
 
 
 // Accord ===============================================
-var accordion = document.getElementsByClassName("accord");
-var z;
+// var accordion = document.getElementsByClassName("accord");
+// var z;
 
-function accord() {
-    for (z = 0; z < accordion.length; z++) {
-        accordion[z].addEventListener("click", function () {
-            this.classList.toggle("active");
-            var panel = this.nextElementSibling;
+// function accord() {
+//     for (z = 0; z < accordion.length; z++) {
+//         accordion[z].addEventListener("click", function () {
+//             this.classList.toggle("active");
+//             var panel = this.nextElementSibling;
 
-            if (panel.style.maxHeight) {
-                panel.style.maxHeight = null;
-                panel.style.overflow = "auto";
+//             if (panel.style.maxHeight) {
+//                 panel.style.maxHeight = null;
+//                 panel.style.overflow = "auto";
 
-            } else {
-                panel.style.maxHeight = panel.scrollHeight + "px";
-                panel.style.overflow = "visible";
-            }
+//             } else {
+//                 panel.style.maxHeight = panel.scrollHeight + "px";
+//                 panel.style.overflow = "visible";
+//             }
 
-            initializeCustomSelect();
-        });
+//             initializeCustomSelect();
+//         });
+//     }
+// }
+
+// accord();
+// Accord end =========================
+
+
+
+
+var accItem = document.getElementsByClassName('shops_aside-item');
+var accHD = document.getElementsByClassName('shops_aside-title');
+for (i = 0; i < accHD.length; i++) {
+    accHD[i].addEventListener('click', toggleItem, false);
+}
+function toggleItem() {
+    var itemClass = this.parentNode.className;
+    for (i = 0; i < accItem.length; i++) {
+        accItem[i].className = 'shops_aside-item close';
+    }
+    if (itemClass == 'shops_aside-item close') {
+        this.parentNode.className = 'shops_aside-item open';
     }
 }
 
-accord();
-// Accord end =========================
