@@ -10,6 +10,9 @@ let menu = document.querySelector(".menu");
 let search_btn = document.querySelector(".search_btn");
 let modal_search = document.querySelector(".modal_search ");
 
+let mobile_filter_shops = document.querySelector(".mobile_filter-btn ");
+let shops_aside = document.querySelector(".shops_aside");
+
 
 function sleep(time) {
     return new Promise((resolve) => setTimeout(resolve, time));
@@ -60,6 +63,11 @@ window.onclick = function (e) {
     if (lang_box.classList.contains('active') && !e.target.closest('.lang_current')) {
         lang_box.classList.remove('active')
     }
+
+    if (shops_aside.classList.contains('active') && !e.target.closest('.shops_aside-wrap')) {
+        shops_aside.classList.remove('active');
+        body.classList.remove('active');
+    }
 }
 
 
@@ -72,7 +80,6 @@ if (lang_current != undefined) {
         });
     });
 }
-
 
 if (burger != undefined) {
     burger.addEventListener('click', function () {
@@ -92,42 +99,23 @@ if (search_btn != undefined) {
     });
 }
 
-
-// Accord ===============================================
-// var accordion = document.getElementsByClassName("accord");
-// var z;
-
-// function accord() {
-//     for (z = 0; z < accordion.length; z++) {
-//         accordion[z].addEventListener("click", function () {
-//             this.classList.toggle("active");
-//             var panel = this.nextElementSibling;
-
-//             if (panel.style.maxHeight) {
-//                 panel.style.maxHeight = null;
-//                 panel.style.overflow = "auto";
-
-//             } else {
-//                 panel.style.maxHeight = panel.scrollHeight + "px";
-//                 panel.style.overflow = "visible";
-//             }
-
-//             initializeCustomSelect();
-//         });
-//     }
-// }
-
-// accord();
-// Accord end =========================
+if (mobile_filter_shops != undefined) {
+    mobile_filter_shops.addEventListener('click', function () {
+        sleep(2).then(() => {
+            shops_aside.classList.add('active');
+            body.classList.add('active');
+        });
+    });
+}
 
 
-
-
+// Shops accordion
 var accItem = document.getElementsByClassName('shops_aside-item');
 var accHD = document.getElementsByClassName('shops_aside-title');
 for (i = 0; i < accHD.length; i++) {
     accHD[i].addEventListener('click', toggleItem, false);
 }
+
 function toggleItem() {
     var itemClass = this.parentNode.className;
     for (i = 0; i < accItem.length; i++) {
@@ -137,4 +125,3 @@ function toggleItem() {
         this.parentNode.className = 'shops_aside-item open';
     }
 }
-

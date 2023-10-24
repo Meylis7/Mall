@@ -2776,7 +2776,49 @@ li {
     display: none;
   }
   .mobile_filter-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 20px;
+    background: #fff;
+    position: relative;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .mobile_filter-btn::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -moz-ransform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    right: 20px;
+    width: 24px;
+    height: 24px;
+    background: url("../images/svg/arrow.svg") no-repeat center;
+  }
+  .mobile_filter-btn span {
+    width: 24px;
     display: block;
+    margin-right: 10px;
+  }
+  .mobile_filter-btn span img, .mobile_filter-btn span svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    -o-object-fit: contain;
+    display: block;
+  }
+  .mobile_filter-btn p {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.3;
   }
   .mobile_lang {
     position: relative;
@@ -2999,11 +3041,19 @@ li {
   .shops_aside ::-webkit-scrollbar {
     display: none;
   }
+  .shops_aside-wrap {
+    max-height: calc(100vh - 50px);
+    overflow: auto;
+  }
   .shops_aside-info .inner {
     background: #F5F5F5;
   }
   .shops_block {
     width: 100%;
+    margin: 0 -7px;
+  }
+  .shops_block-title {
+    display: none;
   }
   .shops_item {
     width: calc(33.33% - 14px);
@@ -3140,6 +3190,9 @@ li {
   .menu_col:last-child {
     margin-top: 30px;
   }
+  .mobile_filter-btn p {
+    font-size: 16px;
+  }
   .hero_title {
     font-size: 16px;
   }
@@ -3186,6 +3239,11 @@ li {
   }
   .about_group-title {
     font-size: 20px;
+  }
+  .shops_aside {
+    padding: 15px;
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
   }
   .footer_col-link {
     font-size: 14px;

@@ -260,7 +260,43 @@
     .mobile {
         &_filter {
             &-btn {
-                display: block;
+                display: flex;
+                align-items: center;
+                padding: 20px;
+                background: #fff;
+                position: relative;
+
+                border-radius: 5px;
+                width: 100%;
+                margin-bottom: 20px;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    @include transformY;
+                    right: 20px;
+                    width: 24px;
+                    height: 24px;
+                    background: url("../images/svg/arrow.svg") no-repeat center;
+                }
+
+                span {
+                    width: 24px;
+                    display: block;
+                    margin-right: 10px;
+
+                    img,svg {
+                        @include ImgCon;
+                        display: block;
+                    }
+                }
+
+                p {
+                    font-size: 18px;
+                    font-weight: 600;
+                    line-height: 1.3;
+                }
             }
         }
 
@@ -535,6 +571,11 @@
                 display: none;
             }
 
+            &-wrap {
+                max-height: calc(100vh - 50px);
+                overflow: auto;
+            }
+
             &-info {
                 .inner {
                     background: #F5F5F5;
@@ -544,6 +585,11 @@
 
         &_block {
             width: 100%;
+            margin: 0 -7px;
+
+            &-title {
+                display: none;
+            }
         }
 
         &_item {
@@ -751,6 +797,16 @@
         }
     }
 
+    .mobile {
+        &_filter {
+            &-btn {
+                p {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
     // Hero ===================
     .hero {
         &_title {
@@ -835,6 +891,15 @@
             &-title {
                 font-size: 20px;
             }
+        }
+    }
+
+    // Shops =======================
+    .shops {
+        &_aside {
+            padding: 15px;
+            width: calc(100% - 30px);
+            height: calc(100% - 30px);
         }
     }
 
