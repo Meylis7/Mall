@@ -68,7 +68,7 @@
             align-items: center;
             position: relative;
             cursor: pointer;
-            padding: 20px;
+            padding: 20px 30px 20px 20px;
             background: #fff;
 
             &.active {
@@ -149,6 +149,7 @@
                     }
                 }
             }
+
             &.bg-2 {
                 &::before {
                     background: #E5C4A3;
@@ -168,6 +169,7 @@
                     }
                 }
             }
+
             &.bg-3 {
                 &::before {
                     background: #0FA3D2;
@@ -187,6 +189,7 @@
                     }
                 }
             }
+
             &.bg-4 {
                 &::before {
                     background: #B2D20F;
@@ -206,6 +209,7 @@
                     }
                 }
             }
+
             &.bg-5 {
                 &::before {
                     background: #0FD28C;
@@ -225,6 +229,7 @@
                     }
                 }
             }
+
             &.bg-6 {
                 &::before {
                     background: #D2A20F;
@@ -244,6 +249,7 @@
                     }
                 }
             }
+
             &.bg-7 {
                 &::before {
                     background: #ABD20F;
@@ -263,6 +269,7 @@
                     }
                 }
             }
+
             &.bg-8 {
                 &::before {
                     background: #2A0FD2;
@@ -282,6 +289,7 @@
                     }
                 }
             }
+
             &.bg-9 {
                 &::before {
                     background: #ABD20F;
@@ -301,6 +309,7 @@
                     }
                 }
             }
+
             &.bg-10 {
                 &::before {
                     background: #710FD2;
@@ -320,6 +329,7 @@
                     }
                 }
             }
+
             &.bg-11 {
                 &::before {
                     background: #D20FB3;
@@ -339,6 +349,7 @@
                     }
                 }
             }
+
             &.bg-12 {
                 &::before {
                     background: #50D20F;
@@ -358,6 +369,7 @@
                     }
                 }
             }
+
             &.bg-13 {
                 &::before {
                     background: #D24A0F;
@@ -458,11 +470,16 @@
 
         &-photo {
             width: 100%;
-            height: 220px;
             display: block;
 
             img {
                 @include ImgCov;
+            }
+        }
+
+        .swiper {
+            &-slide {
+                height: 220px;
             }
         }
 
