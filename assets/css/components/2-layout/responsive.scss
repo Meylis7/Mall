@@ -286,7 +286,8 @@
                     display: block;
                     margin-right: 10px;
 
-                    img,svg {
+                    img,
+                    svg {
                         @include ImgCon;
                         display: block;
                     }
@@ -452,6 +453,27 @@
 
     }
 
+    // News ==================
+    .news {
+        &_group {
+            flex-direction: column-reverse;
+        }
+
+        &_photo {
+            width: 100%;
+            height: 340px;
+
+            img {
+                @include ImgCov;
+            }
+        }
+
+        &_info {
+            padding: 40px;
+            width: calc(100% - 80px);
+        }
+    }
+
     // Banner ====================
     .banner {
         .auto_container {
@@ -597,6 +619,17 @@
         }
     }
 
+    // Modal ==================
+    .modal {
+        &_news {
+            .modal {
+                &_inner {
+                    padding: 0;
+                }
+            }
+        }
+    }
+
 }
 
 // 800 ========================
@@ -688,6 +721,44 @@
         }
     }
 
+    // Modal ======================
+    .modal {
+        &_shop {
+            &-row {
+                flex-direction: column;
+            }
+
+            &-txt {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            &-data {
+                width: 100%;
+                flex-wrap: wrap;
+            }
+
+            &-info {
+                padding: 60px 40px 40px 40px;
+            }
+
+            &-slider {
+                padding: 0 40px 60px;
+
+                .swiper {
+                    &-button {
+                        &-prev {
+                            left: 15px;
+                        }
+
+                        &-next {
+                            right: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 // 650 =======================
@@ -732,7 +803,7 @@
             }
 
             .swiper {
-                &-slide  {
+                &-slide {
                     width: 100px;
                     height: unset;
                 }
@@ -749,6 +820,71 @@
 
             &-txt {
                 font-size: 12px;
+            }
+        }
+    }
+
+    // News ==================
+    .news {
+        &_photo {
+            height: 210px;
+        }
+
+        &_info {
+            padding: 20px;
+            width: calc(100% - 40px);
+        }
+    }
+
+    // Modal ==================
+    .modal {
+        &_close {
+            width: 30px;
+            height: 30px;
+        }
+
+        &_shop {
+            &-photo {
+                height: 225px;
+            }
+
+            &-advert {
+                display: none;
+            }
+
+            &-title {
+                font-size: 20px;
+            }
+
+            &-subtitle {
+                font-size: 14px;
+            }
+
+            &-txt {
+                font-size: 14px;
+            }
+
+            &-item {
+                font-size: 12px;
+            }
+
+            &-info {
+                padding: 20px;
+            }
+
+            &-slider {
+                padding: 20px;
+
+                .swiper {
+                    &-button {
+
+                        &-prev,
+                        &-next {
+                            display: none;
+                        }
+                    }
+
+                }
             }
         }
     }
@@ -828,6 +964,14 @@
 
     // News ====================
     .news {
+        &_title {
+            font-size: 16px;
+        }
+
+        &_txt {
+            font-size: 14px;
+        }
+
         &_slider {
             &-photo {
                 height: 200px;
@@ -924,6 +1068,67 @@
 
             &-txt {
                 font-size: 14px;
+            }
+        }
+    }
+
+    // Modal ====================
+    .modal {
+        &_inner {
+            width: calc(100% - 30px);
+        }
+
+        &_search {
+            .search {
+                &_result {
+                    padding: 20px 0 20px 10px;
+                }
+
+                &_input {
+                    input {
+                        font-size: 16px;
+                    }
+                }
+
+                &_item {
+                    &-photo {
+                        width: 80px;
+                        height: 80px;
+                        margin-right: 10px;
+
+                        &.news {
+                            width: 100px;
+                        }
+                    }
+
+                    &-group {
+                        width: calc(100% - 132px);
+
+                        &.news {
+                            width: calc(100% - 152px);
+                        }
+                    }
+
+                    &-txt,
+                    &-link {
+                        font-size: 14px;
+                    }
+
+                    &-data {
+                        font-size: 10px;
+                    }
+
+                    &-date {
+                        span {
+                            width: 16px;
+                            height: 16px;
+
+                            margin-right: 5px;
+                        }
+
+                        font-size: 14px;
+                    }
+                }
             }
         }
     }

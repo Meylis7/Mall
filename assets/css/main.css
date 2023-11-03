@@ -655,7 +655,7 @@ li {
   margin-top: 20px;
 }
 .modal_shop-txt {
-  width: calc(100% - 390px);
+  width: calc(100% - 410px);
   font-size: 16px;
   font-weight: 400;
   line-height: 1.3;
@@ -834,6 +834,9 @@ li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -843,12 +846,12 @@ li {
   margin-bottom: 0;
 }
 .modal_search .search_item-group {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  width: calc(100% - 182px);
+}
+.modal_search .search_item-group.news {
+  width: calc(100% - 242px);
+  padding: 0;
+  overflow: unset;
 }
 .modal_search .search_item-photo {
   width: 100px;
@@ -2810,7 +2813,8 @@ li {
     display: block;
     margin-right: 10px;
   }
-  .mobile_filter-btn span img, .mobile_filter-btn span svg {
+  .mobile_filter-btn span img,
+  .mobile_filter-btn span svg {
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -2948,6 +2952,26 @@ li {
   .about .swiper-slide {
     height: 450px;
   }
+  .news_group {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .news_photo {
+    width: 100%;
+    height: 340px;
+  }
+  .news_photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -o-object-fit: cover;
+  }
+  .news_info {
+    padding: 40px;
+    width: calc(100% - 80px);
+  }
   .banner .auto_container {
     padding: 0;
   }
@@ -3060,6 +3084,9 @@ li {
   .shops_item {
     width: calc(33.33% - 14px);
   }
+  .modal_news .modal_inner {
+    padding: 0;
+  }
 }
 @media (max-width: 800px) {
   .header .search_btn {
@@ -3114,6 +3141,33 @@ li {
   .shops_item {
     width: calc(50% - 14px);
   }
+  .modal_shop-row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .modal_shop-txt {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .modal_shop-data {
+    width: 100%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .modal_shop-info {
+    padding: 60px 40px 40px 40px;
+  }
+  .modal_shop-slider {
+    padding: 0 40px 60px;
+  }
+  .modal_shop-slider .swiper-button-prev {
+    left: 15px;
+  }
+  .modal_shop-slider .swiper-button-next {
+    right: 15px;
+  }
 }
 @media (max-width: 650px) {
   .auto_container {
@@ -3163,6 +3217,44 @@ li {
   .shops_item-txt {
     font-size: 12px;
   }
+  .news_photo {
+    height: 210px;
+  }
+  .news_info {
+    padding: 20px;
+    width: calc(100% - 40px);
+  }
+  .modal_close {
+    width: 30px;
+    height: 30px;
+  }
+  .modal_shop-photo {
+    height: 225px;
+  }
+  .modal_shop-advert {
+    display: none;
+  }
+  .modal_shop-title {
+    font-size: 20px;
+  }
+  .modal_shop-subtitle {
+    font-size: 14px;
+  }
+  .modal_shop-txt {
+    font-size: 14px;
+  }
+  .modal_shop-item {
+    font-size: 12px;
+  }
+  .modal_shop-info {
+    padding: 20px;
+  }
+  .modal_shop-slider {
+    padding: 20px;
+  }
+  .modal_shop-slider .swiper-button-prev, .modal_shop-slider .swiper-button-next {
+    display: none;
+  }
 }
 @media (max-width: 440px) {
   .auto_container {
@@ -3204,6 +3296,12 @@ li {
   }
   .category {
     padding: 50px 0 30px;
+  }
+  .news_title {
+    font-size: 16px;
+  }
+  .news_txt {
+    font-size: 14px;
   }
   .news_slider-photo {
     height: 200px;
@@ -3260,5 +3358,42 @@ li {
   }
   .footer_col-txt {
     font-size: 14px;
+  }
+  .modal_inner {
+    width: calc(100% - 30px);
+  }
+  .modal_search .search_result {
+    padding: 20px 0 20px 10px;
+  }
+  .modal_search .search_input input {
+    font-size: 16px;
+  }
+  .modal_search .search_item-photo {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+  }
+  .modal_search .search_item-photo.news {
+    width: 100px;
+  }
+  .modal_search .search_item-group {
+    width: calc(100% - 132px);
+  }
+  .modal_search .search_item-group.news {
+    width: calc(100% - 152px);
+  }
+  .modal_search .search_item-txt, .modal_search .search_item-link {
+    font-size: 14px;
+  }
+  .modal_search .search_item-data {
+    font-size: 10px;
+  }
+  .modal_search .search_item-date {
+    font-size: 14px;
+  }
+  .modal_search .search_item-date span {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
   }
 }
